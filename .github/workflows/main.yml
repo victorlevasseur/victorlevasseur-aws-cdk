@@ -43,7 +43,7 @@ jobs:
       - name: Publish package
         run: |
           cd packages/pipelines
-          yarn jsii-release jsii-release-maven
+          yarn jsii-release-maven .
         env:
           MAVEN_SERVER_ID: github
           MAVEN_USERNAME: ${{ github.actor }}
