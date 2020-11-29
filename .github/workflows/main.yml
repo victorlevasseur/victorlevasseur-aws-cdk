@@ -45,7 +45,6 @@ jobs:
           cd packages/pipelines
           yarn jsii-release-maven .
         env:
-          MAVEN_SERVER_ID: github
-          MAVEN_USERNAME: ${{ github.actor }}
-          MAVEN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-          MAVEN_REPOSITORY_URL: "https://maven.pkg.github.com/${{ github.repository }}"
+          MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+          MAVEN_REPOSITORY_URL: https://packages.wedoogift.com/repository/maven-releases/
