@@ -46,6 +46,7 @@ export class CdkStage extends CoreConstruct {
   private readonly commandsToPrepare = new Array<ICdkStageCommand>();
   private readonly stageName: string;
   private readonly host: IStageHost;
+  private afterPreparationAct?: ICdkStageAfterPrepareAct;
   private _prepared = false;
 
   constructor(scope: Construct, id: string, props: CdkStageProps) {
@@ -172,6 +173,16 @@ export class CdkStage extends CoreConstruct {
   }
 
   /**
+   * Register a function to be called after the Cdk stage is prepared.
+   * In this function, further things can be done to the actions inserted into the stage,
+   * as the actions are now effectively bound to their codepipeline stages.
+   * @param act the function to be called after Cdk stage preparation.
+   */
+  public afterPreparation(act: ICdkStageAfterPrepareAct) {
+    this.afterPreparationAct = act;
+  }
+
+  /**
    * Actually add all the actions to the stage.
    *
    * We do this late because before we can render the actual DeployActions,
@@ -203,6 +214,10 @@ export class CdkStage extends CoreConstruct {
       // Prepare the command.
       command.prepare(this, this.stageName, currentPipelineStage, this.cloudAssemblyArtifact, this.host);
       actionsInStage += command.actionsCount();
+    }
+
+    if (this.afterPreparationAct) {
+      this.afterPreparationAct.act();
     }
   }
 
@@ -493,4 +508,14 @@ class ActionCommand implements ICdkStageCommand {
   deploysStack(_artifactId: string): boolean {
     return false;
   }
+}
+
+/**
+ * Provide some code to execute after the CdkStage is prepared.
+ */
+export interface ICdkStageAfterPrepareAct {
+  /**
+   * The function to be run after the CdkStage is prepared.
+   */
+  act(): void;
 }
