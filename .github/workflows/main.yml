@@ -47,4 +47,5 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-          MAVEN_REPOSITORY_URL: https://packages.wedoogift.com/repository/maven-releases/
+          MAVEN_REPOSITORY_URL: "https://packages.wedoogift.com/repository/maven-releases/"
+          MAVEN_STAGING_PROFILE_ID: Releases
