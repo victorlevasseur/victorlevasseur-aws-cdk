@@ -1,0 +1,86 @@
+{
+  "name": "@victorlevasseur-awscdk/pipelines",
+  "version": "1.0.0",
+  "description": "Continuous Delivery of CDK applications",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorlevasseur/victorlevasseur-cdk.git",
+    "directory": "packages/pipelines"
+  },
+  "bin": {},
+  "scripts": {
+    "build": "jsii",
+    "build:watch": "jsii -w",
+    "package": "jsii-pacmak"
+  },
+  "author": {
+    "name": "Victor Levasseur"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.75.0",
+    "@aws-cdk/aws-ecr": "1.75.0",
+    "@aws-cdk/aws-ecr-assets": "1.75.0",
+    "@aws-cdk/aws-s3": "1.75.0",
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "jsii": "^1.15.0",
+    "jsii-pacmak": "^1.15.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/aws-cloudformation": "1.75.0",
+    "@aws-cdk/aws-codebuild": "1.75.0",
+    "@aws-cdk/aws-codepipeline": "1.75.0",
+    "@aws-cdk/aws-codepipeline-actions": "1.75.0",
+    "@aws-cdk/aws-ec2": "1.75.0",
+    "@aws-cdk/aws-events": "1.75.0",
+    "@aws-cdk/aws-iam": "1.75.0",
+    "@aws-cdk/aws-s3-assets": "1.75.0",
+    "@aws-cdk/cloud-assembly-schema": "1.75.0",
+    "@aws-cdk/core": "1.75.0",
+    "@aws-cdk/cx-api": "1.75.0",
+    "constructs": "^3.0.4"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-cloudformation": "1.75.0",
+    "@aws-cdk/aws-codebuild": "1.75.0",
+    "@aws-cdk/aws-codepipeline": "1.75.0",
+    "@aws-cdk/aws-codepipeline-actions": "1.75.0",
+    "@aws-cdk/aws-ec2": "1.75.0",
+    "@aws-cdk/aws-events": "1.75.0",
+    "@aws-cdk/aws-iam": "1.75.0",
+    "@aws-cdk/aws-s3-assets": "1.75.0",
+    "@aws-cdk/cloud-assembly-schema": "1.75.0",
+    "@aws-cdk/core": "1.75.0",
+    "@aws-cdk/cx-api": "1.75.0",
+    "constructs": "^3.0.4"
+  },
+  "bundledDependencies": [],
+  "keywords": [
+    "aws",
+    "cdk",
+    "constructs",
+    "pipelines",
+    "cicd",
+    "continuous",
+    "delivery"
+  ],
+  "engines": {
+    "node": ">= 10.13.0 <13 || >=13.7.0"
+  },
+  "license": "Apache-2.0",
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.victorlevasseur.awscdk.pipelines",
+        "maven": {
+          "groupId": "com.victorlevasseur.awscdk",
+          "artifactId": "cdk-pipelines"
+        }
+      }
+    },
+    "projectReferences": true
+  }
+}
