@@ -39,10 +39,6 @@ jobs:
           yarn
           yarn build
           yarn package
-
-      - name: Publish package
-        run: |
-          cd packages/pipelines
           yarn jsii-release-maven dist/java
         env:
           MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}

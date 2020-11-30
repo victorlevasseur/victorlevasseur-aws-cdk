@@ -3361,10 +3361,9 @@ jsii-reflect@^1.15.0:
     oo-ascii-tree "^1.15.0"
     yargs "^16.1.1"
 
-jsii-release@^0.2.3:
+"jsii-release@git+https://github.com/jsteinich/jsii-release.git#fix_bad_non_central_maven_artifacts":
   version "0.2.3"
-  resolved "https://registry.yarnpkg.com/jsii-release/-/jsii-release-0.2.3.tgz#64b034fed39a878d3a7f7904eec2e9f19760ad10"
-  integrity sha512-/3AxbWISPUXcTLUHxctmdM34mzA7GH7vI/KjIIHlBa1eU7aivln3B18dmSCIZ26glyoS6OQ7qFgw13Eiu87Q8Q==
+  resolved "git+https://github.com/jsteinich/jsii-release.git#bab8c49ad7eee2e36e7cf4ced2ddd04609a8473b"
 
 jsii-rosetta@^1.15.0:
   version "1.15.0"
