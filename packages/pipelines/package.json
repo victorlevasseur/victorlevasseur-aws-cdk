@@ -13,7 +13,7 @@
   "scripts": {
     "build": "jsii",
     "build:watch": "jsii -w",
-    "package": "jsii-pacmak && cp dist/java/com/victorlevasseur/awscdk/cdk-pipelines/1.2.0/cdk-pipelines-1.2.0.jar dist/java/com/victorlevasseur/awscdk/cdk-pipelines/1.2.0/target/cdk-pipelines-1.2.0.jar"
+    "package": "jsii-pacmak"
   },
   "author": {
     "name": "Victor Levasseur"
